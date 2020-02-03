@@ -17,6 +17,17 @@ variable "private_ssh_key" {
     description = "the file containing the corresponding private key"
     default     = "/home/bruce/TerraformProject/sshkeys/genesisTF"
 }
+###
+variable "private_ssh_string" {
+    description = "the private ssh key -- as a string"
+    default     = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+}
+######
+variable "public_ssh_string" {
+    description = "the public ssk key -- as a string"
+    default     = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"
+}
+#####
 
 variable "subnet_name" {
     description = "Denotes the name of the subnet to create"

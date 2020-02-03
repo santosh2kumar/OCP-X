@@ -11,7 +11,7 @@ module "VirtualPrivateCloud" {
     cloud_zone          = "${var.ibmcloud_zone}"
     vpc_name            = "${var.vpc_name}"
     subnet_name         = "${var.subnet_name}"
-    public_ssh_key      = "${file("${var.private_ssh_key}.pub")}"
+    public_ssh_key      = "${var.public_ssh_string}"
     ssh_key_label       = "${var.ssh_key_label}"
     ipv4_cidr_block     = "${var.ipv4_cidr_block}"
 }
@@ -89,7 +89,7 @@ module "OCPPrepare_nodes"  {
     worker_public_ips           = "${module.OCPworker_node.worker_public_ip}"
     worker_hosts                = "${module.OCPworker_node.worker_hostname}"
     domain_name                 = "${var.domain_name}"
-    private_ssh_key             = "${var.private_ssh_key}"
+    private_ssh_key             = "${var.private_ssh_string}"
     rhel_subscription_username  = "${var.rhel_subscription_username}"
     rhel_subscription_password  = "${var.rhel_subscription_password}"
     subscription_pool_list      = "${var.subscription_pool_list}"
@@ -104,7 +104,7 @@ module "OCPInstall_ocp"  {
     master_public_ips           = "${module.OCPmaster_node.master_public_ip}"
     master_hostname             = "${element(module.OCPmaster_node.master_hostname, 0)}"
     rhel_username               = "${var.rhel_username}"
-    private_ssh_key             = "${var.private_ssh_key}"
+    private_ssh_key             = "${var.private_ssh_string}"
     ocp_admin_username          = "${var.ocp_admin_username}"
     ocp_admin_password          = "${var.ocp_admin_password}"
 }
