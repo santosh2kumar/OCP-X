@@ -15,7 +15,7 @@ variable "ssh_key_label" {
 ###
 variable "private_ssh_key" {
     description = "the file containing the corresponding private key"
-    default     = "/home/bruce/TerraformProject/sshkeys/genesisTF"
+    default     = ""
 }
 ###
 variable "private_ssh_string" {

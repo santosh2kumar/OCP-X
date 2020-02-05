@@ -53,7 +53,11 @@ variable "rhel_username" {
 }
 
 variable "private_ssh_key" {
-    description = "File path containing the private key"
+    description = "string cointainer the private key"
+    default     = "id_rsa"
+}
+variable "public_ssh_key" {
+    description = "string cointainer the public key"
     default     = "id_rsa"
 }
 

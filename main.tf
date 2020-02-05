@@ -90,6 +90,7 @@ module "OCPPrepare_nodes"  {
     worker_hosts                = "${module.OCPworker_node.worker_hostname}"
     domain_name                 = "${var.domain_name}"
     private_ssh_key             = "${var.private_ssh_string}"
+    public_ssh_key              = "${var.public_ssh_string}"
     rhel_subscription_username  = "${var.rhel_subscription_username}"
     rhel_subscription_password  = "${var.rhel_subscription_password}"
     subscription_pool_list      = "${var.subscription_pool_list}"
@@ -105,6 +106,7 @@ module "OCPInstall_ocp"  {
     master_hostname             = "${element(module.OCPmaster_node.master_hostname, 0)}"
     rhel_username               = "${var.rhel_username}"
     private_ssh_key             = "${var.private_ssh_string}"
+    public_ssh_key              = "${var.public_ssh_string}"
     ocp_admin_username          = "${var.ocp_admin_username}"
     ocp_admin_password          = "${var.ocp_admin_password}"
 }

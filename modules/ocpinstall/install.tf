@@ -21,7 +21,7 @@ resource "null_resource" "deploy_cluster" {
         #user        = "${var.rhel_username}"
         user        = "root"
         host        = "${element(var.master_public_ips,0)}"
-        private_key = "${file(var.private_ssh_key)}"
+        private_key = "${var.private_ssh_key}"
         agent       = "false"
         timeout     = "60m"
     }
@@ -51,7 +51,7 @@ resource "null_resource" "post_deploy_cluster" {
         #user       = "${var.rhel_username}"
         user        = "root"
         host        = "${element(var.master_public_ips,count.index)}"
-        private_key = "${file(var.private_ssh_key)}"
+        private_key = "${var.private_ssh_key}"
         agent       = "false"
         timeout     = "15m"
     }

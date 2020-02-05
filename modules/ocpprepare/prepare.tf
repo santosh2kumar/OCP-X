@@ -17,12 +17,12 @@ resource "null_resource" "rhel_init" {
         #user        = "${var.rhel_username}"
         user        = "root"
         host        = "${element(concat(var.master_public_ips,var.infra_public_ips,var.worker_public_ips),count.index)}"
-        private_key = "${file(var.private_ssh_key)}"
+        private_key = "${var.private_ssh_key}"
         agent       = "false"
         timeout     = "60m"
     }
     provisioner "file" {
-        source      = "${var.private_ssh_key}.pub"
+        source      = "${var.public_ssh_key}"
         destination = "$HOME/.ssh/id_rsa.pub"
     }
     provisioner "file" {
@@ -67,7 +67,7 @@ resource "null_resource" "openshift_init" {
         #user        = "${var.rhel_username}"
         user        = "root"
         host        = "${element(var.master_public_ips, 0)}"
-        private_key = "${file(var.private_ssh_key)}"
+        private_key = "${var.private_ssh_key}"
         agent       = "false"
         timeout     = "60m"
     }
