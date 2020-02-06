@@ -1,9 +1,9 @@
 ##
 ##  Top Level Variable Definitions
 ###
-variable "resource_group" {
+variable "resource_group_id" {
     description = "the resource group to be used"
-    default     = "powerng-schematics-prod"
+    default     = "6c44fea2935443d29295a85d66c1cd20"
 }
 
 variable "vpc_name" {

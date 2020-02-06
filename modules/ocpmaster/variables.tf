@@ -24,7 +24,7 @@ variable "cloud_zone" {
 ###
 variable "resource_group" {
     description = "resource group to be used for allocating resources"
-    default     = "  "
+    default     = " "
 }
 ###
 variable "master_hostname_prefix" {

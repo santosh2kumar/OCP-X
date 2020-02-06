@@ -26,6 +26,7 @@ resource "ibm_is_subnet" "subnet" {
 resource "ibm_is_ssh_key" "sshkey" {
     name       = "${var.ssh_key_label}"
     public_key = "${var.public_ssh_key}"
+    resource_group = "${var.resource_group}"
 }
 #
 #

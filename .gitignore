@@ -1,0 +1,5 @@
+# don't checkin my versions of files with keys,  passwords, etc
+MyCopies/*
+# don't include the terraform working files
+terraform.*
+.terraform/*

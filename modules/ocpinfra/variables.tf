@@ -23,7 +23,7 @@ variable "cloud_zone" {
 }
 ###
 variable "resource_group" {
-    description = "resource group to allocate resources from"
+    description = "resource group to allocate resources  from"
 }
 ###
 variable "infra_hostname_prefix" {
