@@ -24,6 +24,10 @@ variable "private_ssh_key" {
     default = "id_rsa"
 }
 
+variable "public_ssh_key" {
+    default = "public_key"
+}
+
 variable "ocp_admin_username" {
     default = "admin"
 }
