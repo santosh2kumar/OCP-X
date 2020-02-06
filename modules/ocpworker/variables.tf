@@ -22,7 +22,7 @@ variable "cloud_zone" {
     description = "Region of IBM Public Cloud to deploy"
 }
 ####
-variable "resource_group {
+variable "resource_group" {
     description = "resource group to allocate resources from"
 }
 ###
