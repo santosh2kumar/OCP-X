@@ -7,4 +7,5 @@ resource "ibm_is_volume" "master_docker_volume" {
   profile        = "5iops-tier"
   zone           = "${var.cloud_zone}"
   capacity       = "${var.master_docker_volume_size}"
+  resource_group = "powerng-schematics-prod"
 }
