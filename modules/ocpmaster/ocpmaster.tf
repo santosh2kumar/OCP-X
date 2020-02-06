@@ -41,5 +41,6 @@ resource "ibm_is_floating_ip" "master_fip" {
     name        = "${var.master_fip_name}-${count.index}"
     count       = "${var.master_count}"
     target      = "${element(ibm_is_instance.master.*.primary_network_interface.0.id,count.index)}"
+    resource_group = "${var.resource_group}"
 }
 #

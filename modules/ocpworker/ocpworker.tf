@@ -41,5 +41,6 @@ resource "ibm_is_floating_ip" "worker_fip" {
     name        = "${var.worker_fip_name}-${count.index}"
     count       = "${var.worker_count}"
     target      = "${element(ibm_is_instance.worker.*.primary_network_interface.0.id,count.index)}"
+    resource_group = "${var.resource_group}"
 }
 #
