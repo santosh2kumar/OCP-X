@@ -19,6 +19,7 @@ resource "ibm_is_subnet" "subnet" {
     zone            = "${var.cloud_zone}"
     ip_version      = "ipv4"
     ipv4_cidr_block = "${var.ipv4_cidr_block}"
+    resource_group = "${var.resource_group}"
 }
 
 # Define the  ssh key
