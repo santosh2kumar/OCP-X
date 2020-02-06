@@ -9,6 +9,7 @@ resource "random_id" "random_name" {
 # Define the ocp infra node 
 # --------------------------
 resource "ibm_is_instance" "infra" {
+    resource_group = "${var.resource_group}"
     depends_on  = ["ibm_is_volume.infra_docker_volume"]
     count       = "${var.infra_count}"
     name        = "${var.infra_hostname_prefix}-${var.infra_hostname}-${random_id.random_name.hex}-${count.index}"

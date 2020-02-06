@@ -9,6 +9,7 @@ resource "random_id" "random_name" {
 # Define the ocp Worker node 
 # --------------------------
 resource "ibm_is_instance" "worker" {
+    resource_group = "${var.resource_group}"
     depends_on  = ["ibm_is_volume.worker_docker_volume"]
     count       = "${var.worker_count}"
     name        = "${var.worker_hostname_prefix}-${var.worker_hostname}-${random_id.random_name.hex}-${count.index}"

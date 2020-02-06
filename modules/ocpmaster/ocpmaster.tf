@@ -9,6 +9,7 @@ resource "random_id" "random_name" {
 # Define the ocp master node 
 # --------------------------
 resource "ibm_is_instance" "master" {
+    resource_group = "${var.resource_group}"
     depends_on  = ["ibm_is_volume.master_docker_volume"]
     count       = "${var.master_count}"
     name        = "${var.master_hostname_prefix}-${var.master_hostname}-${random_id.random_name.hex}-${count.index}"

@@ -30,3 +30,8 @@ variable "public_ssh_key" {
     description = "The file containing the public key"
     default     = "id_rsa.pub"
 }
+###
+variable "resource_group" {
+    description =  "The resource group to use for all the resources"
+    default     = "  "
+}

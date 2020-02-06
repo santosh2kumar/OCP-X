@@ -14,6 +14,7 @@ module "VirtualPrivateCloud" {
     public_ssh_key      = "${var.public_ssh_string}"
     ssh_key_label       = "${var.ssh_key_label}"
     ipv4_cidr_block     = "${var.ipv4_cidr_block}"
+    resource_group      = "${var.resource_group}"
 }
 
 #
@@ -33,6 +34,7 @@ module "OCPmaster_node"  {
     vpc_id                      = "${module.VirtualPrivateCloud.vpc_id}"
     vpc_subnet_id               = "${module.VirtualPrivateCloud.vpc_subnet_id}"
     ssh_key_id                  = "${module.VirtualPrivateCloud.ssh_key_id}"
+    resource_group              = "${var.resource_group}"
 }
 
 #
@@ -52,6 +54,7 @@ module "OCPinfra_node"  {
     vpc_id                      = "${module.VirtualPrivateCloud.vpc_id}"
     vpc_subnet_id               = "${module.VirtualPrivateCloud.vpc_subnet_id}"
     ssh_key_id                  = "${module.VirtualPrivateCloud.ssh_key_id}"
+    resource_group              = "${var.resource_group}"
 }
 
 #
@@ -71,6 +74,7 @@ module "OCPworker_node"  {
     vpc_id                      = "${module.VirtualPrivateCloud.vpc_id}"
     vpc_subnet_id               = "${module.VirtualPrivateCloud.vpc_subnet_id}"
     ssh_key_id                  = "${module.VirtualPrivateCloud.ssh_key_id}"
+    resource_group              = "${var.resource_group}"
 }
 
 #

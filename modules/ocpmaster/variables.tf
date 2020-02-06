@@ -22,6 +22,11 @@ variable "cloud_zone" {
     description = "Region of IBM Public Cloud to deploy"
 }
 ###
+variable "resource_group" {
+    description = "resource group to be used for allocating resources"
+    default     = "  "
+}
+###
 variable "master_hostname_prefix" {
     description = "prefix used to group hosts by functionality"
     default     = "tftest"
