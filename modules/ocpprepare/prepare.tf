@@ -22,11 +22,11 @@ resource "null_resource" "rhel_init" {
         timeout     = "60m"
     }
     provisioner "file" {
-        source      = "${var.public_ssh_key}"
+        content      = "${var.public_ssh_key}"
         destination = "$HOME/.ssh/id_rsa.pub"
     }
     provisioner "file" {
-        source      = "${var.private_ssh_key}"
+        content      = "${var.private_ssh_key}"
         destination = "$HOME/.ssh/id_rsa"
     }
     provisioner "remote-exec" {
