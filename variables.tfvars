@@ -28,9 +28,9 @@ docker_volume_size  = "50"
 
 #
 #
-master = {name = "master", profile_id = "bp2-2x8", fip_name = "master-fip", count = "1"}
-infra = {name = "infra", profile_id = "bp2-2x8", fip_name = "infra-fip", count = "1"}
-worker = {name = "worker", profile_id = "bp2-2x8", fip_name = "worker-fip", count = "1"}
+master = {name = "master", profile_id = "bc1-2x8", fip_name = "master-fip", count = "1"}
+infra = {name = "infra", profile_id = "bc1-2x8", fip_name = "infra-fip", count = "1"}
+worker = {name = "worker", profile_id = "bc1-2x8", fip_name = "worker-fip", count = "1"}
 domain_name = "IBM-OpenShift.cloud"
 
 # RHEL Registeration
