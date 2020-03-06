@@ -45,7 +45,7 @@ variable "ipv4_cidr_block" {
 ## 
 variable "image_id" {
     description = "The OS image ID that will be loaded for all nodes"
-    default     = "9a6aed49-d4f7-4464-9056-0e0223d2a2f0"
+    default     = "r006-e0039ab2-fcc8-11e9-8a36-6ffb6501dd33"
 }
 variable "hostname_prefix" {
     description = "A prefix to put in front of the hostname for all nodes"
@@ -65,7 +65,7 @@ variable "master" {
     type = "map"
     default = {
         name        = "master"
-        profile_id  = "bp2-2x8"
+        profile_id  = "bc1-2x8"
         fip_name    = "master-fip"
         count       = "3"
     }
@@ -76,7 +76,7 @@ variable "infra" {
     type = "map"
     default = {
         name        = "infra"
-        profile_id  = "bp2-2x8"
+        profile_id  = "bc1-2x8"
         fip_name    = "infra-fip"
         count       = "1"
     }
@@ -87,7 +87,7 @@ variable "worker" {
     type = "map"
     default = {
         name        = "worker"
-        profile_id  = "bp2-2x8"
+        profile_id  = "bc1-2x8"
         fip_name    = "worker-fip"
         count       = "2"
     }
