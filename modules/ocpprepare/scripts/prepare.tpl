@@ -5,33 +5,33 @@ openshift_version_number=3.11
 ansible_version=2.6
 
 echo "vm.max_map_count = 262144" | sudo tee --append /etc/sysctl.conf > /dev/null
-sudo sysctl -p
+#sudo sysctl -p
 
-sudo subscription-manager clean
-sudo subscription-manager register --username=${rhel_user_name} --password=${rhel_password} --force
-sudo subscription-manager refresh
-for pool in ${subscription_pool_list}; do
-  sudo subscription-manager attach --pool=$pool
-done
-sudo subscription-manager repos --disable="*"
+#sudo subscription-manager clean
+#sudo subscription-manager register --username=${rhel_user_name} --password=${rhel_password} --force
+#sudo subscription-manager refresh
+#for pool in ${subscription_pool_list}; do
+#  sudo subscription-manager attach --pool=$pool
+#done
+#sudo subscription-manager repos --disable="*"
 
-if [ $(arch) == 'ppc64le' ]; then
-sudo subscription-manager repos \
-    --enable="rhel-7-for-power-le-rpms" \
-    --enable="rhel-7-for-power-le-extras-rpms" \
-    --enable="rhel-7-for-power-le-optional-rpms" \
-    --enable="rhel-7-server-ansible-$ansible_version-for-power-le-rpms" \
-    --enable="rhel-7-for-power-le-ose-$openshift_version_number-rpms" \
-    --enable="rhel-7-for-power-le-fast-datapath-rpms" \
-    --enable="rhel-7-server-for-power-le-rhscl-rpms"
-else
-sudo subscription-manager repos \
-  --enable="rhel-7-server-rpms" \
-  --enable="rhel-7-server-extras-rpms" \
-  --enable="rhel-7-fast-datapath-rpms" \
-  --enable="rhel-7-server-ansible-$ansible_version-rpms" \
-  --enable="rhel-7-server-ose-$openshift_version_number-rpms"
-fi
+#if [ $(arch) == 'ppc64le' ]; then
+#sudo subscription-manager repos \
+ #   --enable="rhel-7-for-power-le-rpms" \
+  #  --enable="rhel-7-for-power-le-extras-rpms" \
+   # --enable="rhel-7-for-power-le-optional-rpms" \
+    #--enable="rhel-7-server-ansible-$ansible_version-for-power-le-rpms" \
+    #--enable="rhel-7-for-power-le-ose-$openshift_version_number-rpms" \
+    #--enable="rhel-7-for-power-le-fast-datapath-rpms" \
+    #--enable="rhel-7-server-for-power-le-rhscl-rpms"
+#else
+#sudo subscription-manager repos \
+ # --enable="rhel-7-server-rpms" \
+  #--enable="rhel-7-server-extras-rpms" \
+  #--enable="rhel-7-fast-datapath-rpms" \
+  #--enable="rhel-7-server-ansible-$ansible_version-rpms" \
+  #--enable="rhel-7-server-ose-$openshift_version_number-rpms"
+#fi
 
 sudo rm -fr /var/cache/yum/*
 sudo yum clean all
