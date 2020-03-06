@@ -65,7 +65,7 @@ variable "master" {
     type = "map"
     default = {
         name        = "master"
-        profile_id  = "bc1-2x8"
+        profile_id  = "bx2-2x8"
         fip_name    = "master-fip"
         count       = "3"
     }
@@ -76,7 +76,7 @@ variable "infra" {
     type = "map"
     default = {
         name        = "infra"
-        profile_id  = "bc1-2x8"
+        profile_id  = "bx2-2x8"
         fip_name    = "infra-fip"
         count       = "1"
     }
@@ -87,7 +87,7 @@ variable "worker" {
     type = "map"
     default = {
         name        = "worker"
-        profile_id  = "bc1-2x8"
+        profile_id  = "bx2-2x8"
         fip_name    = "worker-fip"
         count       = "2"
     }
